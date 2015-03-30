@@ -1,20 +1,11 @@
 package com.j3l11234.onetopic;
 
 
-import com.j3l11234.onetopic.MessageFragment.MessageAdapter;
-import com.j3l11234.onetopic.entity.MessageItem.MessageItemTag;
-
-import android.content.Context;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 
 /**
@@ -31,9 +22,7 @@ public class MeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
     	View view = inflater.inflate(R.layout.fragment_me,container,false);
-    	
-    	
-    	
+
         return view;
     }
 

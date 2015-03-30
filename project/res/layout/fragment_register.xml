@@ -6,9 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.j3l11234.onetopic.LoginFragment" >
+    tools:context="com.example.samsung.onetopic.SignUpActivity">
 
-    <TableLayout
+     <TableLayout
         android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/login_username" />
+                android:text="@string/register_username" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/login_password" />
+                android:text="@string/register_password" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -54,6 +54,28 @@
                 android:inputType="textPassword"
                 android:padding="5dp" />
         </TableRow>
+        
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/register_confirm_password" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_editview"
+                android:inputType="textPassword"
+                android:padding="5dp" />
+        </TableRow>
+
     </TableLayout>
 
     <Button
@@ -63,6 +85,6 @@
         android:layout_below="@+id/tableLayout1"
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
-        android:text="@string/login_sign_in"/>
-    
+        android:text="@string/register_sign_up"/>
+
 </RelativeLayout>

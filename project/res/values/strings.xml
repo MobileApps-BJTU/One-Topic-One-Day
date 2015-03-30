@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    
     <string name="app_name">OneTopic</string>
     <string name="hello_world">Hello world!</string>
+    
     <string name="action_settings">Settings</string>
+    <string name="action_login">Login</string>
+    <string name="action_register">Register</string>
+    
     <string name="tab_title_topic">Topic</string>
     <string name="tab_title_message">Message</string>
     <string name="tab_title_me">Me</string>
+    
     <string name="topic_btn_support">Support</string>
     <string name="topic_btn_against">Against</string>
     <string name="topic_btn_reply">Reply</string>
     <string name="topic_btn_favorite">Favorite</string>
+    
     <string name="profile_item_participate">My Participate</string>
     <string name="profile_item_favorite">My Favorite</string>
     <string name="profile_item_comment">My Comment</string>
     <string name="profile_item_logout">Logout</string>
-    <string name="title_activity_test">TestActivity</string>
-
+	
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_sign_in">Sign In</string>
+    
+    <string name="register_username">Username</string>
+    <string name="register_password">Password</string>
+    <string name="register_confirm_password">Confirm\nPassword</string>
+    <string name="register_sign_up">Sign Up</string>
 </resources>

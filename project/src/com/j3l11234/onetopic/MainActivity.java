@@ -40,7 +40,12 @@ public class MainActivity extends ActionBarActivity {
 		case R.id.action_settings:
 			return true;
 		case R.id.action_login:
-			fragmentManager.beginTransaction().replace(R.id.container, new LoginFragment()).addToBackStack(null).commit();
+			fragmentManager.beginTransaction().replace(R.id.container, new LoginFragment())
+			.addToBackStack(null).commit();
+			break;
+		case R.id.action_register:
+			fragmentManager.beginTransaction().replace(R.id.container, new RegisterFragment())
+			.addToBackStack(null).commit();
 			break;
 		default:
 			break;

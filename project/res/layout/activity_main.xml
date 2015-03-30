@@ -2,15 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FFEEEE"
     tools:context="com.j3l11234.onetopic.MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_view_paper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context=".MainActivity" >
+
+        <android.support.v4.view.PagerTabStrip
+            android:id="@+id/main_paper_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFCCCC"
+            android:padding="10dp"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:textColor="#CC3333" />
+    </android.support.v4.view.ViewPager>
 
 </RelativeLayout>

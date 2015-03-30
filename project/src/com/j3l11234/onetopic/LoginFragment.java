@@ -1,30 +1,18 @@
 package com.j3l11234.onetopic;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+public class LoginFragment extends Fragment {
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class TopicFragment extends Fragment {
-
-
-    public TopicFragment() {
-        // Required empty public constructor
-    }
-
-
-    @Override
+	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+    	View view = inflater.inflate(R.layout.fragment_login,container,false);
     	
-        return inflater.inflate(R.layout.fragment_topic,container,false);
+        return view;
     }
-
-
 }

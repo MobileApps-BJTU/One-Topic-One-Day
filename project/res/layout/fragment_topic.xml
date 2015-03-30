@@ -11,7 +11,7 @@
         android:layout_above="@+id/linearLayout1"
         android:layout_alignParentTop="true"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/fragment_topic_bg" >
+        android:background="@drawable/bg_fragment_topic" >
 
         <TextView
             android:id="@+id/textView"
@@ -23,6 +23,24 @@
             android:textColor="#ffffffff"
             android:textSize="30sp" />
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_btn_prev" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_btn_next" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,61 +48,59 @@
             android:layout_marginBottom="20dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp" >
-            
-            <TextView
-	            android:id="@+id/textView1_1"
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            android:gravity="center_vertical|center_horizontal"
-	            android:drawableLeft="@drawable/icon_support_small"
-	            android:drawableStart="@drawable/icon_support_small"
-	            android:text="10"
-	            android:layout_marginEnd="5dp"
-	            android:layout_marginRight="5dp"
-	            android:textSize="20sp" />
-	        
-	        <TextView
-	            android:id="@+id/textView333_1"
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            android:gravity="center_vertical|center_horizontal"
-	            android:drawableLeft="@drawable/icon_against_small"
-	            android:drawableStart="@drawable/icon_against_small"
-	            android:text="13"
-	            android:layout_marginLeft="5dp"
-	            android:layout_marginRight="5dp"
-	            android:textSize="20sp" />
-	        
-	        <TextView
-	            android:id="@+id/textView2_1"
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            android:gravity="center_vertical|center_horizontal"
-	            android:drawableLeft="@drawable/icon_reply_small"
-	            android:drawableStart="@drawable/icon_reply_small"
-	            android:text="13"
-	            android:layout_marginLeft="5dp"
-	            android:layout_marginRight="5dp"
-	            android:textSize="20sp" />
-	        
-	        <TextView
-	            android:id="@+id/textView3_1"
-	            android:layout_width="0dp"
-	            android:layout_height="wrap_content"
-	            android:layout_weight="1"
-	            android:gravity="center_vertical|center_horizontal"
-	            android:drawableLeft="@drawable/icon_faverite_small"
-	            android:drawableStart="@drawable/icon_faverite_small"
-	            android:text="5"
-	            android:layout_marginStart="5dp"
-	            android:layout_marginLeft="5dp"
-	            android:textSize="20sp" />
-        
-        </LinearLayout>
 
+            <TextView
+                android:id="@+id/textView1_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/icon_support_small"
+                android:drawableStart="@drawable/icon_support_small"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="10"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView333_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/icon_against_small"
+                android:drawableStart="@drawable/icon_against_small"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="13"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView2_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/icon_reply_small"
+                android:drawableStart="@drawable/icon_reply_small"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="13"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView3_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/icon_faverite_small"
+                android:drawableStart="@drawable/icon_faverite_small"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="5"
+                android:textSize="20sp" />
+        </LinearLayout>
     </RelativeLayout>
 
     <LinearLayout
@@ -92,8 +108,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_fragment_topic"
         android:minHeight="60dp"
-        android:background="@drawable/fragment_topic_bg"
         android:padding="0dp" >
 
         <TextView
@@ -101,41 +117,40 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
             android:drawableTop="@drawable/icon_support"
+            android:gravity="center_horizontal"
             android:text="@string/topic_btn_support"
             android:textSize="15sp" />
-        
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
             android:drawableTop="@drawable/icon_against"
+            android:gravity="center_horizontal"
             android:text="@string/topic_btn_against"
             android:textSize="15sp" />
-        
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
             android:drawableTop="@drawable/icon_reply"
+            android:gravity="center_horizontal"
             android:text="@string/topic_btn_reply"
             android:textSize="15sp" />
-        
+
         <TextView
             android:id="@+id/textView4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center_horizontal"
             android:drawableTop="@drawable/icon_faverite"
+            android:gravity="center_horizontal"
             android:text="@string/topic_btn_favorite"
             android:textSize="15sp" />
-
     </LinearLayout>
 
 </RelativeLayout>

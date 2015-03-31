@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_fragment_topic"
+                android:minHeight="100dp"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/textView_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:text="2014-03-31"
+                    android:textColor="#CC3333"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView_topic"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_date"
+                    android:layout_margin="5dp"
+                    android:text="    Is it good or not to observe the experience"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/textView_topic"
+                    android:layout_margin="5dp" >
+
+                    <TextView
+                        android:id="@+id/textView_supportNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/icon_support_small"
+                        android:drawableStart="@drawable/icon_support_small"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="10"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView_againstNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/icon_against_small"
+                        android:drawableStart="@drawable/icon_against_small"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="13"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView_replyNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/icon_reply_small"
+                        android:drawableStart="@drawable/icon_reply_small"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="13"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView_faveriteNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/icon_faverite_small"
+                        android:drawableStart="@drawable/icon_faverite_small"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="5"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <com.j3l11234.onetopic.widget.ListViewForScrollView
+                android:id="@+id/listview_replyList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#FFCCCC" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" >
+
+        <EditText
+            android:id="@+id/editText_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/button_submit"
+            android:layout_toStartOf="@+id/button_submit"
+            android:background="@drawable/bg_editview"
+            android:inputType="text" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/button_submit"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editText_reply"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/editText_reply"
+            android:background="@drawable/bg_button_small"
+            android:text="@string/reply_submit"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -9,11 +9,15 @@ import com.j3l11234.onetopic.entity.TopicItem;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.AnimationSet;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -21,6 +25,7 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class TopicFragment extends Fragment {
+	private RelativeLayout layoutContent;
 	private TextView textViewDate;
 	private TextView textViewTopic;
 	private TextView textViewSupportNum;
@@ -47,6 +52,7 @@ public class TopicFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_topic,container,false);
 
+		layoutContent = (RelativeLayout) view.findViewById(R.id.layout_content);
 		textViewDate = (TextView) view.findViewById(R.id.textView_date);
 		textViewTopic = (TextView) view.findViewById(R.id.textView_topic);
 		textViewSupportNum = (TextView) view.findViewById(R.id.textView_supportNum);
@@ -82,7 +88,7 @@ public class TopicFragment extends Fragment {
 		textViewAgainstNum.setText(String.valueOf(topic.getAgainstNum()));
 		textViewReplyNum.setText(String.valueOf(topic.getReplyNum()));
 		textViewFaveriteNum.setText(String.valueOf(topic.getFavoriteNum()));
-		
+
 		textViewSupportBtn.setCompoundDrawablesWithIntrinsicBounds(
 				0, topic.isSupport() ? R.drawable.icon_support_red : R.drawable.icon_support, 0, 0);
 		textViewAgainstBtn.setCompoundDrawablesWithIntrinsicBounds(
@@ -96,6 +102,11 @@ public class TopicFragment extends Fragment {
 			if(view.equals(btnPrev)){
 				if(postion > 0){
 					postion--;
+					AnimationSet animationSet = new AnimationSet(true);
+					AlphaAnimation alphaAnimation = new AlphaAnimation(0.3f, 1);
+					alphaAnimation.setDuration(200);
+					animationSet.addAnimation(alphaAnimation);
+					layoutContent.startAnimation(animationSet);
 					setDisplayTopic(topicList.get(postion));
 				}else if(postion < 0){
 					postion = 0;
@@ -104,6 +115,11 @@ public class TopicFragment extends Fragment {
 			}else if(view.equals(btnNext)){
 				if(postion < topicList.size()-1){
 					postion++;
+					AnimationSet animationSet = new AnimationSet(true);
+					AlphaAnimation alphaAnimation = new AlphaAnimation(0.3f, 1);
+					alphaAnimation.setDuration(200);
+					animationSet.addAnimation(alphaAnimation);
+					layoutContent.startAnimation(animationSet);
 					setDisplayTopic(topicList.get(postion));
 				}else if(postion > topicList.size()-1){
 					postion = topicList.size()-1;
@@ -123,6 +139,7 @@ public class TopicFragment extends Fragment {
 				setDisplayTopic(topicList.get(postion));
 			}else if(view.equals(textViewReplyBtn)){
 				getActivity().getSupportFragmentManager().beginTransaction()
+				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 				.replace(R.id.container, new ReplyFragment(topicList.get(postion)))
 				.addToBackStack(null).commit();
 			}

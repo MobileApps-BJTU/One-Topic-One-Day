@@ -71,7 +71,9 @@ public class TestData {
 				reply.setPortrait(portraitList[readom]);
 				reply.setDate(time);
 				reply.setContent("sample reply text,"+i+","+j);
-				messageList.add(reply);
+				if(readom != 0){
+					messageList.add(reply);
+				}
 				replyList.add(reply);
 			}
 			topic.setReplyList(replyList);

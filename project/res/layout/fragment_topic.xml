@@ -20,31 +20,6 @@
             android:background="@drawable/bg_fragment_topic"
             android:minHeight="250dp" >
 
-            <TextView
-                android:id="@+id/textView_date"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:gravity="center"
-                android:text="2014-03-31"
-                android:textColor="#CC3333"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView_topic"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_margin="10dp"
-                android:layout_toEndOf="@+id/btn_next"
-                android:layout_toLeftOf="@+id/btn_next"
-                android:layout_toRightOf="@+id/btn_prev"
-                android:layout_toStartOf="@+id/btn_next"
-                android:gravity="center"
-                android:text="Is it good or not to observe the experience"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
-
             <Button
                 android:id="@+id/btn_prev"
                 android:layout_width="50dp"
@@ -63,63 +38,90 @@
                 android:layout_centerVertical="true"
                 android:background="@drawable/bg_btn_next" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp" >
+            <RelativeLayout
+                android:id="@+id/layout_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
 
                 <TextView
-                    android:id="@+id/textView_supportNum"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView_date"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/icon_support_small"
-                    android:drawableStart="@drawable/icon_support_small"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="10"
-                    android:textSize="20sp" />
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:text="2014-03-31"
+                    android:textColor="#CC3333"
+                    android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView_againstNum"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView_topic"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/icon_against_small"
-                    android:drawableStart="@drawable/icon_against_small"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="13"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="Is it good or not to observe the experience"
+                    android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/textView_replyNum"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/icon_reply_small"
-                    android:drawableStart="@drawable/icon_reply_small"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="13"
-                    android:textSize="20sp" />
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp" >
 
-                <TextView
-                    android:id="@+id/textView_faveriteNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/icon_favorite_small"
-                    android:drawableStart="@drawable/icon_favorite_small"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:text="5"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/textView_supportNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/icon_support_small"
+                        android:drawableStart="@drawable/icon_support_small"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="10"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView_againstNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/icon_against_small"
+                        android:drawableStart="@drawable/icon_against_small"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="13"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView_replyNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/icon_reply_small"
+                        android:drawableStart="@drawable/icon_reply_small"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="13"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView_faveriteNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/icon_favorite_small"
+                        android:drawableStart="@drawable/icon_favorite_small"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="5"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </RelativeLayout>
         </RelativeLayout>
 
         <LinearLayout

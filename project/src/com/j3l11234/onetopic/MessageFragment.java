@@ -7,6 +7,7 @@ import java.util.List;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,8 +46,10 @@ public class MessageFragment extends ListFragment {
 	
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
+		int topicIndex = messageList.get(position).getTopicIndex();
 		getActivity().getSupportFragmentManager().beginTransaction()
-		.replace(R.id.container, new ReplyFragment(TestData.topicList.get(position)))
+		.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+		.replace(R.id.container, new ReplyFragment(TestData.topicList.get(topicIndex)))
 		.addToBackStack(null).commit();
 		super.onListItemClick(l, v, position, id);
 	}

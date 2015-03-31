@@ -53,8 +53,7 @@ public class MessageFragment extends ListFragment {
     	
 		@Override
 		public int getCount() {
-			return 20;
-			//return messageList.size();
+			return messageList.size();
 		}
 
 		@Override

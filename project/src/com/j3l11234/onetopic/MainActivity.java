@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity {
 		fragmentManager = getSupportFragmentManager();
         if (savedInstanceState == null) {
         	fragmentManager.beginTransaction()
-					.add(R.id.container, new MainFragment()).addToBackStack(null).commit();
+					.add(R.id.container, new MainFragment()).commit();
 		}
 	}
 

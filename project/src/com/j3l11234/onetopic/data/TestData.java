@@ -2,6 +2,8 @@ package com.j3l11234.onetopic.data;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -40,13 +42,13 @@ public class TestData {
 				R.drawable.portrait_sample7,
 		};
 		
-
+		messageList = new ArrayList<ReplyItem>();
 		topicList = new ArrayList<TopicItem>();
 		Date today = new Date();
 		Calendar calendar = new GregorianCalendar();
         calendar.setTime(today);
 		for (int i = 0; i < tpoicText.length; i++) {
-			int replyNum = (int) (Math.random()*15)+5;
+			int replyNum = (int) (Math.random()*6)+5;
 			Date time = calendar.getTime();
 			TopicItem topic = new TopicItem();
 			topic.setTopic(tpoicText[i]);
@@ -68,22 +70,16 @@ public class TestData {
 				reply.setPortrait(portraitList[readom]);
 				reply.setDate(time);
 				reply.setContent("sample reply text,"+i+","+j);
+				messageList.add(reply);
 				replyList.add(reply);
 			}
 			topic.setReplyList(replyList);
 		}
-		
-		messageList = new ArrayList<ReplyItem>();
-		Date time = new Date();
-		for (int i = 0; i < 20; i++) {
-			time = new Date((long) (time.getTime() - (Math.random()*5*3600000)));
-			ReplyItem reply = new ReplyItem();
-			int readom = (int) (Math.random()*nameList.length);
-			reply.setName(nameList[readom]);
-			reply.setPortrait(portraitList[readom]);
-			reply.setDate(time);
-			reply.setContent("sample reply text,"+i);
-			messageList.add(reply);
-		}
+		Collections.sort(messageList,new Comparator<ReplyItem>() {
+			public int compare(ReplyItem lhs, ReplyItem rhs) {
+				return lhs.getDate().compareTo(rhs.getDate());
+			}
+		});
 	}
+	
 }

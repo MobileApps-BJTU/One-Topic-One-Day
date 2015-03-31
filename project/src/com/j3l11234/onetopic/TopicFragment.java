@@ -36,7 +36,7 @@ public class TopicFragment extends Fragment {
 
 	private List<TopicItem> topicList;
 	private int postion = 0;
-	
+
 	public TopicFragment() {
 		topicList = TestData.topicList;
 	}
@@ -61,12 +61,15 @@ public class TopicFragment extends Fragment {
 		textViewReplyBtn = (TextView) view.findViewById(R.id.textView_reply_btn);
 		textViewFaveriteBtn = (TextView) view.findViewById(R.id.textView_faverite_btn);
 
-		NavOnClickListener navOnClickListener = new NavOnClickListener();
-		btnPrev.setOnClickListener(navOnClickListener);
-		btnNext.setOnClickListener(navOnClickListener);
-		textViewReplyBtn.setOnClickListener(navOnClickListener);
-		
-		
+		NavOnClickListener topicOnClickListener = new NavOnClickListener();
+		btnPrev.setOnClickListener(topicOnClickListener);
+		btnNext.setOnClickListener(topicOnClickListener);
+		textViewSupportBtn.setOnClickListener(topicOnClickListener);
+		textViewAgainstBtn.setOnClickListener(topicOnClickListener);
+		textViewReplyBtn.setOnClickListener(topicOnClickListener);
+		textViewFaveriteBtn.setOnClickListener(topicOnClickListener);
+
+
 		setDisplayTopic(topicList.get(postion));
 		return view;
 	}
@@ -79,11 +82,16 @@ public class TopicFragment extends Fragment {
 		textViewAgainstNum.setText(String.valueOf(topic.getAgainstNum()));
 		textViewReplyNum.setText(String.valueOf(topic.getReplyNum()));
 		textViewFaveriteNum.setText(String.valueOf(topic.getFavoriteNum()));
+		
+		textViewSupportBtn.setCompoundDrawablesWithIntrinsicBounds(
+				0, topic.isSupport() ? R.drawable.icon_support_red : R.drawable.icon_support, 0, 0);
+		textViewAgainstBtn.setCompoundDrawablesWithIntrinsicBounds(
+				0, topic.isAgainst() ? R.drawable.icon_against_red : R.drawable.icon_against, 0, 0);
+		textViewFaveriteBtn.setCompoundDrawablesWithIntrinsicBounds(
+				0, topic.isFavorite() ? R.drawable.icon_favorite_red : R.drawable.icon_favorite, 0, 0);
 	}
 
 	class NavOnClickListener implements OnClickListener{
-		
-
 		public void onClick(View view) {
 			if(view.equals(btnPrev)){
 				if(postion > 0){
@@ -101,6 +109,18 @@ public class TopicFragment extends Fragment {
 					postion = topicList.size()-1;
 					setDisplayTopic(topicList.get(postion));
 				}
+			}else if(view.equals(textViewSupportBtn)){
+				TopicItem topic = topicList.get(postion);
+				topic.addSupport();
+				setDisplayTopic(topicList.get(postion));
+			}else if(view.equals(textViewAgainstBtn)){
+				TopicItem topic = topicList.get(postion);
+				topic.addAgainst();
+				setDisplayTopic(topicList.get(postion));
+			}else if(view.equals(textViewFaveriteBtn)){
+				TopicItem topic = topicList.get(postion);
+				topic.addFavorite();
+				setDisplayTopic(topicList.get(postion));
 			}else if(view.equals(textViewReplyBtn)){
 				getActivity().getSupportFragmentManager().beginTransaction()
 				.replace(R.id.container, new ReplyFragment(topicList.get(postion)))

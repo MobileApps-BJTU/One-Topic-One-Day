@@ -38,46 +38,66 @@ public class TopicItem {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	
 	public String getTopic() {
 		return topic;
 	}
 	public void setTopic(String topic) {
 		this.topic = topic;
 	}
+	
 	public int getSupportNum() {
 		return supportNum;
 	}
 	public void setSupportNum(int supportNum) {
 		this.supportNum = supportNum;
 	}
+	
 	public int getAgainstNum() {
 		return againstNum;
 	}
 	public void setAgainstNum(int againstNum) {
 		this.againstNum = againstNum;
 	}
+	
 	public int getFavoriteNum() {
 		return favoriteNum;
 	}
 	public void setFavoriteNum(int favoriteNum) {
 		this.favoriteNum = favoriteNum;
 	}
+	
 	public int getReplyNum() {
 		return replyNum;
 	}
 	public void setReplyNum(int replyNum) {
 		this.replyNum = replyNum;
 	}
+	
 	public boolean isSupport() {
 		return isSupport;
 	}
 	public void setSupport(boolean isSupport) {
 		this.isSupport = isSupport;
 	}
+	
+	public boolean isAgainst() {
+		return isAgainst;
+	}
+	public void setAgainst(boolean isAgainst) {
+		this.isAgainst = isAgainst;
+	}
+	
+	public boolean isFavorite() {
+		return isFavorite;
+	}
+	public void setFavorite(boolean isFavorite) {
+		this.isFavorite = isFavorite;
+	}
+
 	public List<ReplyItem> getReplyList() {
 		return replyList;
 	}
-
 	public void setReplyList(List<ReplyItem> replyList) {
 		this.replyList = replyList;
 	}

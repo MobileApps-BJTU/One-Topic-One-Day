@@ -99,8 +99,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:layout_weight="1"
-                        android:drawableLeft="@drawable/icon_faverite_small"
-                        android:drawableStart="@drawable/icon_faverite_small"
+                        android:drawableLeft="@drawable/icon_favorite_small"
+                        android:drawableStart="@drawable/icon_favorite_small"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="5"
                         android:textSize="20sp" />

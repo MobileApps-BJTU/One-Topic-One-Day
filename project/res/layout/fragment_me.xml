@@ -82,7 +82,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_faverite" />
+                    android:src="@drawable/icon_favorite" />
 
 	            <TextView
 	                android:layout_width="wrap_content"

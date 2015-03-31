@@ -3,6 +3,7 @@ package com.j3l11234.onetopic;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
@@ -11,8 +12,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,6 +43,9 @@ public class ReplyFragment extends Fragment {
 	private TextView textViewReplyNum;
 	private TextView textViewFaveriteNum;
 	
+	private EditText editTextReply;
+	private Button btnSubmit;
+	
     public ReplyFragment(TopicItem topic) {
     	this.topic = topic;
     	this.replyList = topic.getReplyList();
@@ -55,6 +62,26 @@ public class ReplyFragment extends Fragment {
 		textViewAgainstNum = (TextView) view.findViewById(R.id.textView_againstNum);
 		textViewReplyNum = (TextView) view.findViewById(R.id.textView_replyNum);
 		textViewFaveriteNum = (TextView) view.findViewById(R.id.textView_faveriteNum);
+		
+		editTextReply = (EditText) view.findViewById(R.id.editText_reply);
+		btnSubmit = (Button) view.findViewById(R.id.button_submit);
+		btnSubmit.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				String text = editTextReply.getText().toString();
+				editTextReply.setText("");
+				if(text.length() > 0){
+					ReplyItem reply = new ReplyItem();
+					reply.setPortrait(R.drawable.portrait_sample);
+					reply.setContent(text);
+					reply.setDate(new Date());
+					reply.setName("j3l11234");
+					replyList.add(reply);
+					topic.addReply();
+					messageAdapter.notifyDataSetChanged();  
+				}
+			}
+		});
+		
 		
 		SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
 		textViewDate.setText(sdf.format(topic.getDate()));

@@ -55,7 +55,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/portrait_sample" />
+                    android:src="@drawable/icon_part" />
 
 	            <TextView
 	                android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/portrait_sample" />
+                    android:src="@drawable/icon_faverite" />
 
 	            <TextView
 	                android:layout_width="wrap_content"
@@ -109,7 +109,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/portrait_sample" />
+                    android:src="@drawable/icon_reply" />
 
 	            <TextView
 	                android:layout_width="wrap_content"
@@ -139,7 +139,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/portrait_sample" />
+                    android:src="@drawable/icon_exit" />
 
 	            <TextView
 	                android:layout_width="wrap_content"

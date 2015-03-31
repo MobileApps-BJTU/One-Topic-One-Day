@@ -1,6 +1,7 @@
 package com.j3l11234.onetopic;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.j3l11234.onetopic.data.TestData;
 import com.j3l11234.onetopic.entity.MessageItem;
+import com.j3l11234.onetopic.entity.ReplyItem;
 import com.j3l11234.onetopic.entity.MessageItem.MessageItemTag;
 
 
@@ -22,11 +26,11 @@ import com.j3l11234.onetopic.entity.MessageItem.MessageItemTag;
  * A simple {@link Fragment} subclass.
  */
 public class MessageFragment extends ListFragment {
-	private List<MessageItem> messageList;
+	private List<ReplyItem> messageList;
 	private MessageAdapter messageAdapter;
 	
     public MessageFragment() {
-    	messageList = new ArrayList<MessageItem>();
+    	messageList = TestData.messageList;
     	
     }
     
@@ -65,30 +69,20 @@ public class MessageFragment extends ListFragment {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			MessageItemTag holder;
+			SimpleDateFormat sdf= new SimpleDateFormat("MM-dd HH:mm:ss");
             if (convertView == null){
-            	convertView = mInflater.inflate(R.layout.message_listview_item, null);
-            	holder = new MessageItemTag();
-            	holder.name = (TextView) convertView.findViewById(R.id.message_name);
-            	holder.content = (TextView) convertView.findViewById(R.id.message_content);
-            	holder.time = (TextView) convertView.findViewById(R.id.message_time);
-            	convertView.setTag(holder);//绑定ViewHolder对象                   
+            	convertView = mInflater.inflate(R.layout.reply_item, null); 
             }
-            else{
-            	holder = (MessageItemTag)convertView.getTag();            
-            }
-            
-            holder.name.setText("Name - "+position);
-            holder.content.setText("Content - "+position);
-            holder.time.setText("Time - "+position);
-             
-//            /**为Button添加点击事件*/             
-//            holder.bt.setOnClickListener(new OnClickListener() {
-//                @Override
-//                publicvoid onClick(View v) {
-//                    Log.v("MyListViewBase", "你点击了按钮" + position);//打印Button的点击信息                    
-//                }
-//            });
+            ReplyItem reply =  messageList.get(position);
+            ImageView portrait = (ImageView) convertView.findViewById(R.id.reply_portrait);
+            TextView name = (TextView) convertView.findViewById(R.id.reply_name);
+    		TextView content = (TextView) convertView.findViewById(R.id.reply_content);
+    		TextView time = (TextView) convertView.findViewById(R.id.reply_time);
+    		
+    		portrait.setImageResource(reply.getPortrait());
+    		name.setText(reply.getName());
+            content.setText(reply.getContent());
+            time.setText(sdf.format(reply.getDate()));
             
 			return convertView;
 		}

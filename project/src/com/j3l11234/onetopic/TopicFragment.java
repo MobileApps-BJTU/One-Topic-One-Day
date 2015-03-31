@@ -35,7 +35,8 @@ public class TopicFragment extends Fragment {
 	private TextView textViewFaveriteBtn;
 
 	private List<TopicItem> topicList;
-
+	private int postion = 0;
+	
 	public TopicFragment() {
 		topicList = TestData.topicList;
 	}
@@ -63,20 +64,10 @@ public class TopicFragment extends Fragment {
 		NavOnClickListener navOnClickListener = new NavOnClickListener();
 		btnPrev.setOnClickListener(navOnClickListener);
 		btnNext.setOnClickListener(navOnClickListener);
-		
-		textViewReplyBtn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				getActivity().getSupportFragmentManager().beginTransaction()
-				.replace(R.id.container, new ReplyFragment()).addToBackStack(null).commit();
-				
-				// TODO Auto-generated method stub
-				
-			}
-		});
+		textViewReplyBtn.setOnClickListener(navOnClickListener);
 		
 		
-		setDisplayTopic(topicList.get(0));
+		setDisplayTopic(topicList.get(postion));
 		return view;
 	}
 
@@ -91,7 +82,7 @@ public class TopicFragment extends Fragment {
 	}
 
 	class NavOnClickListener implements OnClickListener{
-		private int postion = 0;
+		
 
 		public void onClick(View view) {
 			if(view.equals(btnPrev)){
@@ -110,6 +101,10 @@ public class TopicFragment extends Fragment {
 					postion = topicList.size()-1;
 					setDisplayTopic(topicList.get(postion));
 				}
+			}else if(view.equals(textViewReplyBtn)){
+				getActivity().getSupportFragmentManager().beginTransaction()
+				.replace(R.id.container, new ReplyFragment(topicList.get(postion)))
+				.addToBackStack(null).commit();
 			}
 		}
 	}

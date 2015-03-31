@@ -1,6 +1,7 @@
 package com.j3l11234.onetopic.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class TopicItem {
 	private Date date;
@@ -9,7 +10,8 @@ public class TopicItem {
 	private int supportNum;
 	private int againstNum;
 	private int favoriteNum;
-	
+	private List<ReplyItem> replyList;
+
 	public TopicItem(){
 		
 	}
@@ -25,7 +27,6 @@ public class TopicItem {
 	}
 
 	private int replyNum;
-	
 	private boolean isSupport;
 	private boolean isAgainst;
 	private boolean isFavorite;
@@ -73,7 +74,14 @@ public class TopicItem {
 	public void setSupport(boolean isSupport) {
 		this.isSupport = isSupport;
 	}
+	public List<ReplyItem> getReplyList() {
+		return replyList;
+	}
 
+	public void setReplyList(List<ReplyItem> replyList) {
+		this.replyList = replyList;
+	}
+	
 	public void reset(){
 		isSupport = false;
 		isAgainst = false;

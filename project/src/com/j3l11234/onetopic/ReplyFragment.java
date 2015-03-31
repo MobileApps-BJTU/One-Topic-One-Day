@@ -2,14 +2,12 @@ package com.j3l11234.onetopic;
 
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,8 +18,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.j3l11234.onetopic.entity.MessageItem;
-import com.j3l11234.onetopic.entity.MessageItem.MessageItemTag;
 import com.j3l11234.onetopic.entity.ReplyItem;
 import com.j3l11234.onetopic.entity.TopicItem;
 import com.j3l11234.onetopic.widget.ListViewForScrollView;

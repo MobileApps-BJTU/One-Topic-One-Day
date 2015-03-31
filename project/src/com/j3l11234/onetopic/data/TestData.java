@@ -65,6 +65,7 @@ public class TestData {
 			for (int j = 0; j < replyNum; j++) {
 				time = new Date((long) (time.getTime() + (Math.random()*2*3600000)));
 				ReplyItem reply = new ReplyItem();
+				reply.setTopicIndex(i);
 				int readom = (int) (Math.random()*nameList.length);
 				reply.setName(nameList[readom]);
 				reply.setPortrait(portraitList[readom]);

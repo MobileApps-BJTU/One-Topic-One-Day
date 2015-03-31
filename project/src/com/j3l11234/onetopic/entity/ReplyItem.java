@@ -7,7 +7,9 @@ public class ReplyItem {
 	private String name;
 	private String content;
 	private Date date;
-	
+	private int topicIndex;
+
+
 	public ReplyItem() {
 
 	}
@@ -35,5 +37,13 @@ public class ReplyItem {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public int getTopicIndex() {
+		return topicIndex;
+	}
+
+	public void setTopicIndex(int topicIndex) {
+		this.topicIndex = topicIndex;
 	}
 }
